@@ -68,13 +68,20 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\sad\Source\FirstEngine\FirstEngine\FirstEngine\dev\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\sad\Source\FirstEngine\FirstEngine\FirstEngine\dev\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -110,6 +117,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Audio.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Camera.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Collision.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\FileIO.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Game.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Image.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Particle.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\ParticleEmitter.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Square.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Text.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Audio.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Camera.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Collision.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\FileIO.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Game.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Image.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Particle.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\ParticleEmitter.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Square.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Text.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seng_Solution\Seng\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
